@@ -17,7 +17,7 @@ public class AllPageObjectsNativeApp extends Base {
     protected AppPage appPage;
     protected AlertDialogs alertDialogs;
 
-    @BeforeMethod(enabled = true)
+    @BeforeMethod(groups = {"native"}, onlyForGroups = {"native"})
     public void initPages(){
         homePage = new HomePage(driver);
         preferencePage = new PreferencePage(driver);

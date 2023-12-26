@@ -7,6 +7,7 @@ import org.openqa.selenium.Dimension;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import utils.AndroidGestures;
+import utils.ExplicitlyWait;
 
 public class ViewsPage {
 
@@ -36,6 +37,7 @@ public class ViewsPage {
     }
 
     public void clickGallery() {
+        ExplicitlyWait.getWait().waitUntilElementVisible(gallery);
         gallery.click();
     }
 

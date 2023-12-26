@@ -17,11 +17,12 @@ import java.time.Duration;
 import java.util.Collections;
 
 public class AndroidGestures {
-    AndroidDriver driver = Base.getDriverObj();
+    private static AndroidDriver driver;
     private static AndroidGestures androidGestures = new AndroidGestures();
     private AndroidGestures(){}
 
     public static AndroidGestures getAndroidGesturesObj() {
+        driver = Base.getDriverObj();
         return androidGestures;
     }
 
@@ -51,12 +52,12 @@ public class AndroidGestures {
         );
     }
 
-    public void scrollTillTextVisible(String elementText){
+    public void scrollTillTextVisible(String elementText) {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\""+elementText+"\"));"));
 //        driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\""+elementText+"\").instance(0));"));
     }
 
-    public void scrollBackwardsTillTextVisible(String elementText){
+    public void scrollBackwardsTillTextVisible(String elementText) {
         driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector().scrollable(true).instance(0)).scrollIntoView(new UiSelector().text(\""+elementText+"\")).scrollBackward()"));
     }
 
@@ -73,7 +74,7 @@ public class AndroidGestures {
         do {
             driver.perform(Collections.singletonList(sequence));
             i++;
-        }while(i<3);
+        }while(i<1);
     }
 
     public void scrollTillEnd(){

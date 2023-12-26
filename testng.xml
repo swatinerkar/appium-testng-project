@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test preserve-order="true" name="Hybrid" enabled="true">
+        <groups>
+            <run>
+                <include name="hybrid"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.test.TestScenarios_GeneralStore_Hybrid">
+            </class>
+            <parameter name="typeTestApp" value="hybrid"/>
+            <parameter name="device" value="Emulator"/>
+        </classes>
+    </test>
+
+    <test preserve-order="true" name="Native" enabled="true">
+        <groups>
+            <run>
+                <include name="native"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.test.TestScenarios_ApiDemos_Native">
+            </class>
+            <parameter name="typeTestApp" value="native"/>
+            <parameter name="device" value="Emulator"/>
+        </classes>
+    </test>
+
+    <test preserve-order="true" name="WebBrowser" enabled="true">
+        <groups>
+            <run>
+                <include name="web"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="com.test.TestScenarios_WebBrowser">
+            </class>
+            <parameter name="typeTestApp" value="web"/>
+            <parameter name="device" value="Emulator"/>
+        </classes>
+    </test>
+</suite>

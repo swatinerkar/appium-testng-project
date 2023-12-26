@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import utils.AndroidGestures;
+import utils.ExplicitlyWait;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +32,7 @@ public class HomePage {
     }
 
     public void clickPreference() {
+        ExplicitlyWait.getWait().waitUntilElementVisible(preference);
         preference.click();
     }
 

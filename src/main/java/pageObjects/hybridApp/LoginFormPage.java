@@ -38,7 +38,7 @@ public class LoginFormPage{
                 countryDropdown.click();
         }
 
-        public void selectCountry(String country) {
+        public void selectCountry(String country) throws InterruptedException {
                 AndroidGestures.getAndroidGesturesObj().scrollTillTextVisible(country);
                 driver.findElement(By.xpath("//android.widget.TextView[@text=\""+country+"\"]")).click();
         }

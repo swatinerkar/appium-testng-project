@@ -14,7 +14,7 @@ public class AllPageObjectsHybridApp extends Base {
     protected CartPage cartPage;
     protected HybridWebPage hybridWebPage;
 
-    @BeforeMethod(enabled = false)
+    @BeforeMethod(groups = {"hybrid"}, onlyForGroups = {"hybrid"})
     public void initPages(){
         loginFormPage = new LoginFormPage(driver);
         productListPage = new ProductListPage(driver);

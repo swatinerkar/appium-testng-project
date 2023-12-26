@@ -5,7 +5,9 @@ import io.appium.java_client.android.options.UiAutomator2Options;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 import io.appium.java_client.service.local.AppiumServiceBuilder;
 import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Parameters;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -24,15 +26,18 @@ public class Base {
         return driver;
     }
 
+
     @BeforeClass(alwaysRun = true)
-    public void appiumConfigure() throws MalformedURLException {
+    @Parameters({"typeTestApp", "device"})
+    public void appiumConfigure(String typeTestApp, String device) throws MalformedURLException {
 //        setup capabilities
         options = new UiAutomator2Options();
+        System.out.println("Device: "+device);
+        System.out.println("typeTestApp: "+typeTestApp);
 
 //        TODO: Read this data from prop file.
-        String appName = "General Store";                       //General Store or Api Demos
-        String executionType = "Emulator";                      //either Real Device or Emulator
-        String typeTestApp = "Native";                          //Hybrid, Nativ, Web
+//        String executionType = "EMULATOR";                      //either Real Device or Emulator
+//        String typeTestApp = "hybrid";                          //Hybrid, Nativ, Web
 
         switch (typeTestApp.toUpperCase()){
             case "HYBRID" : {
@@ -57,14 +62,15 @@ public class Base {
             }
         }
 
-        switch (executionType.toUpperCase()) {
+        switch (device.toUpperCase()) {
             case "EMULATOR" : {
                 options.setDeviceName("Pixel 2 API 28");
 //                Set App package and activity so app will directly launch to that activity
 //                  options.setAppPackage("io.appium.android.apis");
 //                  options.setAppActivity("io.appium.android.apis.preference.PreferenceDependencies");
+                break;
             }
-            case "REAL DEVICE" : options.setDeviceName("Android Device");
+            case "REAL DEVICE" : {options.setDeviceName("Android Device"); break;}
 
         }
 
@@ -75,7 +81,7 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
     }
 
-    @AfterClass
+    @AfterTest(alwaysRun = true)
     public void tearDown(){
         driver.quit();
         server.stop();

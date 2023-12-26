@@ -25,7 +25,7 @@ public class DragAndDropPage {
      * @param y coordinateDropPosition
      */
     public void dragTheElementAt(int x, int y) {
-        AndroidGestures.getAndroidGesturesObj().dragAndDrop(firstCircle, 620, 497);
+        AndroidGestures.getAndroidGesturesObj().dragAndDrop(firstCircle, 750, 550);
     }
 
     public void verifyTheDropMessage(String expectedMsg) {

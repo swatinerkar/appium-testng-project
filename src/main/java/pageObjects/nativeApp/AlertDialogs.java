@@ -6,6 +6,7 @@ import io.appium.java_client.pagefactory.AppiumFieldDecorator;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import utils.ExplicitlyWait;
 
 public class AlertDialogs {
 
@@ -28,6 +29,7 @@ public class AlertDialogs {
     }
 
     public void verifyMessageOnDialog(String expectedAlertMsg) {
+        ExplicitlyWait.getWait().waitUntilElementVisible(msgOnOkCancelDialog_txt);
         Assert.assertEquals(msgOnOkCancelDialog_txt.getText(), expectedAlertMsg);
     }
 
