@@ -31,15 +31,15 @@ public class Base {
     @BeforeClass(alwaysRun = true)
     @Parameters({"typeTestApp", "device"})
     public void appiumConfigure(String typeTestApp, String device) throws IOException {
-//        public void appiumConfigure() throws IOException {
+//        public void appiumConfigure() throws IOException, InterruptedException {
         PropertiesReader properties = new PropertiesReader();
 //        setup capabilities
         options = new UiAutomator2Options();
 //        System.out.println("Device: "+device);
 //        System.out.println("typeTestApp: "+typeTestApp);
 
-        device = System.getProperty("device")!=null ? System.getProperty("device") : device;                          //either Real Device or Emulator
-        typeTestApp = System.getProperty("typeTestApp")!=null ? System.getProperty("typeTestApp") : typeTestApp;                    //Hybrid, Nativ, Web
+//        String device = System.getProperty("device");                          //either Real Device or Emulator
+//        String typeTestApp = System.getProperty("typeTestApp");                    //Hybrid, Nativ, Web
         String ipAddress = properties.getProperties("ipAddress");
         int port = Integer.parseInt(properties.getProperties("port"));
         String plugins = properties.getProperties("plugins");
@@ -77,7 +77,7 @@ public class Base {
         }
 
 
-        server.start();
+        this.server.start();
 //        AndroidDriver instance
 //        driver = new AndroidDriver(new URL("http://127.0.0.1:4723/"), options);
         driver = new AndroidDriver(server.getUrl(), options);
@@ -97,6 +97,6 @@ public class Base {
     @AfterTest(alwaysRun = true)
     public void tearDown(){
         driver.quit();
-        this.server.stop();
+        server.stop();
     }
 }
