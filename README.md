@@ -238,10 +238,15 @@ In want to execute only specific test, mark only that as enabled="true" and othe
 * Maven command after building the project
 
 ![Maven command after building the project](https://github.com/swatinerkar/appium-testng-project/blob/main/images/After%20Pipeline%20Build_Parameters.png)
-## Author
+## 🚀 About Me
 
-- [Linkedin - @swatinerkar](https://www.linkedin.com/in/swatinerkar/)
-- [Git - @swatinerkar](https://github.com/swatinerkar)
+I'm a Software Automation Tester, having 11+ years of experience.
+
+Please have a look on my Portfolio: [@swatinerkar](https://swatinerkar.wordpress.com/)
+
+My LinkedIn Profile: [@swatinerkar](https://www.linkedin.com/in/swatinerkar/)
+
+If you would like to have some guidence, you can book any of my service: [@swatinerkar](https://topmate.io/swati_nerkar)
 
 
 ## Support
