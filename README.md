@@ -136,7 +136,7 @@ Download from - https://developer.android.com/studio
     - ExtentReport
     - Screenshots
 
-Following the the screenshot of project structure:
+Following is the screenshot of project structure:
 
 ![Folder Structure](https://github.com/swatinerkar/appium-testng-project/blob/main/images/Appium_Project_Folder_Structure.png)
 ## Environment Variables
@@ -234,6 +234,8 @@ In want to execute only specific test, mark only that as enabled="true" and othe
 * Passing same variables which we are passing while executing test cases via maven.
 
 ![Jenkins Build With Parameters](https://github.com/swatinerkar/appium-testng-project/blob/main/images/Jenkins_BuildParameters.png)
+
+* Maven command after building the project
 
 ![Maven command after building the project](https://github.com/swatinerkar/appium-testng-project/blob/main/images/After%20Pipeline%20Build_Parameters.png)
 ## Author
